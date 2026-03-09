@@ -1,0 +1,12 @@
+Flask
+Flask-SQLAlchemy
+Authlib
+python-dotenv
+easyocr
+PyMuPDF
+groq
+Pillow
+edge-tts
+chromadb
+sentence-transformers
+PyPDF2

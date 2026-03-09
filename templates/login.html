@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Jan-Nyay AI</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Grid / cell background */
+        .bg-grid {
+            background-image:
+                linear-gradient(to right, rgba(255, 255, 255, 0.12) 5px, transparent 2px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.12) 5px, transparent 2px);
+            background-size: 56px 56px;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex items-center justify-center 
+p-4 md:p-6 relative overflow-hidden
+bg-gradient-to-br from-teal-400 via-cyan-500 to-cyan-700">
+
+    <!-- Background grid -->
+    <div class="absolute inset-0 bg-grid pointer-events-none"></div>
+
+    <!-- Main Card -->
+    <div class="max-w-5xl w-full bg-white rounded-[2.5rem] shadow-2xl
+    overflow-hidden grid grid-cols-1 md:grid-cols-2 relative z-10">
+
+        <!-- LEFT SECTION -->
+        <div
+            class="relative bg-gradient-to-br from-teal-500 to-cyan-600
+            text-white p-8 md:pt-12 md:pb-12 md:pl-12 md:pr-5 flex flex-col justify-center overflow-hidden">
+
+            <!-- Curved Divider (Desktop only) -->
+            <div
+                class="hidden md:block absolute top-1/2 -translate-y-1/2 right-[-44px]
+                h-[112%] w-[88px] bg-white rounded-l-full">
+            </div>
+
+            <!-- Decorative circles -->
+            <div class="absolute -top-20 -left-20 w-72 h-72 bg-white/10 rounded-full"></div>
+            <div class="absolute bottom-10 -right-20 w-60 h-60 bg-white/10 rounded-full"></div>
+
+            <div class="relative z-10">
+                <div
+                    class="bg-gradient-to-br from-white to-teal-50 w-20 h-20 md:w-24 md:h-24
+                    rounded-3xl flex items-center justify-center
+                    shadow-xl ring-1 ring-white/40 p-3">
+                    <img src="{{ url_for('static', filename='images/logo.png', v='1') }}" alt="Jan-Nyay AI Logo"
+                        class="w-full h-full object-contain drop-shadow-sm"
+                        onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden');">
+                    <div
+                        class="hidden w-full h-full rounded-2xl bg-teal-100 text-teal-700 font-bold text-xl md:text-2xl flex items-center justify-center">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                </div>
+
+                <h1 class="text-3xl md:text-4xl font-bold mb-4">WELCOME</h1>
+
+                <p class="text-teal-100 text-base md:text-lg mb-6 font-medium">
+                    Jan-Nyay AI
+                </p>
+
+                <p class="text-teal-200 max-w-sm mb-8 text-sm md:text-base">
+                    Kanoon Sabke Liye, Sabki Bhasha Mein.
+                </p>
+
+                <div class="space-y-4 text-sm md:text-base">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-scale-balanced text-teal-200"></i>
+                        <span>Advanced Legal Analysis</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-microphone-lines text-teal-200"></i>
+                        <span>Multilingual Voice Support</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-user-shield text-teal-200"></i>
+                        <span>Secure & Private</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT SECTION -->
+        <div class="p-8 md:pt-12 md:pb-12 md:pr-12 md:pl-5 flex flex-col justify-center">
+
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">
+                Sign in
+            </h2>
+
+            <p class="text-gray-500 mb-10 text-sm md:text-base">
+                Sign in to access your legal dashboard
+            </p>
+
+            <!-- Login Button -->
+            <a href="/login"
+                class="flex items-center justify-center gap-4 w-full
+                border border-gray-200 py-4 rounded-2xl
+                hover:bg-teal-50 hover:border-teal-300
+                transition-all duration-300 shadow-sm active:scale-95">
+
+                <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+                    class="w-6 h-6">
+
+                <span class="font-semibold text-gray-700">
+                    Continue with Google
+                </span>
+            </a>
+
+            <div class="mt-12 text-center">
+                <div class="flex justify-center gap-5 text-gray-400 text-xl mb-4">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <i class="fa-solid fa-cloud-lock"></i>
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <p class="text-[10px] tracking-widest text-gray-400 font-bold uppercase">
+                    RAG Powered Legal Tech Platform
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+# --- Python & Environment ---
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- Secrets & Config (SABSE ZAROORI) ---
+.env
+instance/
+.flaskenv
+
+# --- Database & Storage ---
+# Hum local database aur vector files ko GitHub par nahi bhejte
+*.db
+jannyay.db
+legal_db/
+
+# --- User Data & Uploads ---
+# User ki personal files aur generated audio ko ignore karte hain
+uploads/*
+!uploads/.gitkeep
+static/audio/*
+!static/audio/.gitkeep
+*.mp3
+*.wav
+
+# --- OS Related ---
+.DS_Store
+Thumbs.db
