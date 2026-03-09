@@ -13,7 +13,7 @@ import edge_tts
 import chromadb
 from sentence_transformers import SentenceTransformer
 
-# --- DATABASE IMPORTS ---
+
 from models import db, User, ChatSession, Message 
 
 load_dotenv()
@@ -21,15 +21,15 @@ load_dotenv()
 app = Flask(__name__)
 app.secret_key = os.getenv("SECRET_KEY", "jan_nyay_key_123")
 
-# --- GROQ CLIENT SETUP ---
+
 groq_client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
-# --- DATABASE CONFIG ---
+
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///jannyay.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 
-# --- FOLDERS CONFIG ---
+
 UPLOAD_FOLDER = 'uploads'
 AUDIO_FOLDER = 'static/audio'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
