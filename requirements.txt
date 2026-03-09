@@ -10,3 +10,4 @@ edge-tts
 chromadb
 sentence-transformers
 PyPDF2
+gunicorn
