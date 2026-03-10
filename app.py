@@ -301,7 +301,5 @@ def logout():
     return redirect('/')
 
 if __name__ == '__main__':
-    # Server ka port uthao (Render/Railway ke liye), agar nahi mila toh 5000 use karo (Local ke liye)
-    port = int(os.environ.get("PORT", 5000))
-    # host='0.0.0.0' ka matlab hai ki server bahar ki duniya se connect ho sakega
-    app.run(host='0.0.0.0', port=port, debug=True)
+    port = int(os.environ.get("PORT", 7860)) # Hugging Face 7860 use karta hai
+    app.run(host='0.0.0.0', port=port)
