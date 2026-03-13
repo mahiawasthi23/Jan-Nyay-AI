@@ -1,4 +1,5 @@
 from flask import Flask, render_template, url_for, session, redirect, request, jsonify
+from werkzeug.middleware.proxy_fix import ProxyFix
 from authlib.integrations.flask_client import OAuth
 from dotenv import load_dotenv
 import os
@@ -19,6 +20,7 @@ from models import db, User, ChatSession, Message
 load_dotenv()
 
 app = Flask(__name__)
+app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_host=1)
 app.secret_key = os.getenv("SECRET_KEY", "jan_nyay_key_123")
 
 
@@ -38,8 +40,6 @@ app.config['AUDIO_FOLDER'] = AUDIO_FOLDER
 for folder in [UPLOAD_FOLDER, AUDIO_FOLDER]:
     if not os.path.exists(folder):
         os.makedirs(folder)
-
-os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
 
 # 3. OCR & RAG Initialization
 reader = easyocr.Reader(['hi', 'en'], gpu=False)
