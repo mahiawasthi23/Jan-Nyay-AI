@@ -4,7 +4,7 @@ emoji: 🤖
 colorFrom: purple
 colorTo: pink
 sdk: gradio
-sdk_version: "3.52.2"
+sdk_version: "3.53.2"
 python_version: "3.10"
 app_file: app.py
 pinned: false
