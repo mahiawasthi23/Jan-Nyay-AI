@@ -14,3 +14,4 @@ edge-tts==6.1.12
 chromadb==0.5.5
 sentence-transformers==2.7.0
 gunicorn==22.0.0
+PyPDF2==3.0.1
